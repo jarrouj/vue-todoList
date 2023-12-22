@@ -9,14 +9,15 @@
   <body>
     <div id="app">
       <div>
-        <label for="goal">Goal</label>
-        <input type="text" id="goal" />
-        <button>Add Goal</button>
+       <label for="goal">Goal</label>
+       <input type="text" id="goal" v-model="enteredValue" />   <!-- enteredValue from the data of the created app in app.js -->
+       <button v-on:click="addGoal">Add Goal</button> <!--  like eventlistener with the method used -->
       </div>
       <ul>
-        
+       <li v-for="goal in goals">{{ goal }}</li>   <!-- we use for when we want to replicate like foreach -->
       </ul>
     </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="app.js"></script>
   </body>
 </html>
